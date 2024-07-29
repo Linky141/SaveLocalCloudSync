@@ -1,0 +1,70 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Projects\\Desktop\\SaveLocalCloudSync\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A79B3BA8-26DC-4259-820A-C16A8CD38200}|SaveLocalCloudSync\\SaveLocalCloudSync.csproj|d:\\projects\\desktop\\savelocalcloudsync\\savelocalcloudsync\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A79B3BA8-26DC-4259-820A-C16A8CD38200}|SaveLocalCloudSync\\SaveLocalCloudSync.csproj|solutionrelative:savelocalcloudsync\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A79B3BA8-26DC-4259-820A-C16A8CD38200}|SaveLocalCloudSync\\SaveLocalCloudSync.csproj|d:\\projects\\desktop\\savelocalcloudsync\\savelocalcloudsync\\windows\\newgamewindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A79B3BA8-26DC-4259-820A-C16A8CD38200}|SaveLocalCloudSync\\SaveLocalCloudSync.csproj|solutionrelative:savelocalcloudsync\\windows\\newgamewindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A79B3BA8-26DC-4259-820A-C16A8CD38200}|SaveLocalCloudSync\\SaveLocalCloudSync.csproj|d:\\projects\\desktop\\savelocalcloudsync\\savelocalcloudsync\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{A79B3BA8-26DC-4259-820A-C16A8CD38200}|SaveLocalCloudSync\\SaveLocalCloudSync.csproj|solutionrelative:savelocalcloudsync\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 1,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedHeight": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "NewGameWindow.xaml.cs",
+              "DocumentMoniker": "D:\\Projects\\Desktop\\SaveLocalCloudSync\\SaveLocalCloudSync\\Windows\\NewGameWindow.xaml.cs",
+              "RelativeDocumentMoniker": "SaveLocalCloudSync\\Windows\\NewGameWindow.xaml.cs",
+              "ToolTip": "D:\\Projects\\Desktop\\SaveLocalCloudSync\\SaveLocalCloudSync\\Windows\\NewGameWindow.xaml.cs",
+              "RelativeToolTip": "SaveLocalCloudSync\\Windows\\NewGameWindow.xaml.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAEQAAAAyAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-29T20:33:38.973Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "D:\\Projects\\Desktop\\SaveLocalCloudSync\\SaveLocalCloudSync\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "SaveLocalCloudSync\\MainWindow.xaml",
+              "ToolTip": "D:\\Projects\\Desktop\\SaveLocalCloudSync\\SaveLocalCloudSync\\MainWindow.xaml",
+              "RelativeToolTip": "SaveLocalCloudSync\\MainWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-07-29T20:18:48.674Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "D:\\Projects\\Desktop\\SaveLocalCloudSync\\SaveLocalCloudSync\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "SaveLocalCloudSync\\MainWindow.xaml.cs",
+              "ToolTip": "D:\\Projects\\Desktop\\SaveLocalCloudSync\\SaveLocalCloudSync\\MainWindow.xaml.cs",
+              "RelativeToolTip": "SaveLocalCloudSync\\MainWindow.xaml.cs",
+              "ViewState": "AQIAABQAAAAAAAAAAAAgwCIAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-29T20:11:05.766Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
