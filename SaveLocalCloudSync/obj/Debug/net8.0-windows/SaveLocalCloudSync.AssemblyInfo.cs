@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SaveLocalCloudSync")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a8ef1dd4e0f408204851e4bbf504ab1f06f4e3e6")]
 [assembly: System.Reflection.AssemblyProductAttribute("SaveLocalCloudSync")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SaveLocalCloudSync")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

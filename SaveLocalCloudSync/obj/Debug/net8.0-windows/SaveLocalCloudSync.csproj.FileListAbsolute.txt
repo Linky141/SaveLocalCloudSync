@@ -24,3 +24,8 @@ D:\Projects\Desktop\SaveLocalCloudSync\SaveLocalCloudSync\obj\Debug\net8.0-windo
 D:\Projects\Desktop\SaveLocalCloudSync\SaveLocalCloudSync\obj\Debug\net8.0-windows\SaveLocalCloudSync.genruntimeconfig.cache
 D:\Projects\Desktop\SaveLocalCloudSync\SaveLocalCloudSync\obj\Debug\net8.0-windows\ref\SaveLocalCloudSync.dll
 D:\Projects\Desktop\SaveLocalCloudSync\SaveLocalCloudSync\obj\Debug\net8.0-windows\SaveLocalCloudSync_Content.g.cs
+D:\Projects\Desktop\SaveLocalCloudSync\SaveLocalCloudSync\bin\Debug\net8.0-windows\MaterialDesignColors.dll
+D:\Projects\Desktop\SaveLocalCloudSync\SaveLocalCloudSync\bin\Debug\net8.0-windows\MaterialDesignThemes.Wpf.dll
+D:\Projects\Desktop\SaveLocalCloudSync\SaveLocalCloudSync\bin\Debug\net8.0-windows\Microsoft.Xaml.Behaviors.dll
+D:\Projects\Desktop\SaveLocalCloudSync\SaveLocalCloudSync\obj\Debug\net8.0-windows\App.baml
+D:\Projects\Desktop\SaveLocalCloudSync\SaveLocalCloudSync\obj\Debug\net8.0-windows\SaveLocalCloudSync.sourcelink.json

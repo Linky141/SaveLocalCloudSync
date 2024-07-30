@@ -15,7 +15,7 @@ public partial class MainWindow : Window
     ObservableCollection<GameModel> games;
     private GameModel _selectedGame;
     ConsoleManager _consoleManager;
-    private string _version = "Alpha 1.0";
+    private string _version = "Beta 1.0";
 
     public MainWindow()
     {
@@ -29,18 +29,7 @@ public partial class MainWindow : Window
         windowMainWindow.Title = "Game save local cloud sync manager (" + _version + ")";
     }
 
-
-
-
-
-
-
-
-
-
-
-
-    static void DeleteDirectoryContents(string directoryPath)
+    bool DeleteDirectoryContents(string directoryPath)
     {
         try
         {
@@ -61,11 +50,13 @@ public partial class MainWindow : Window
         }
         catch (Exception ex)
         {
-            MessageBox.Show(ex.Message);
+            _consoleManager.Add(ex.Message);
+            return false;
         }
+        return true;
     }
 
-    static void CopyDirectory(string sourceDir, string destDir)
+    bool CopyDirectory(string sourceDir, string destDir)
     {
         try
         {
@@ -92,8 +83,10 @@ public partial class MainWindow : Window
         }
         catch (Exception ex)
         {
-            MessageBox.Show(ex.Message);
+            _consoleManager.Add(ex.Message);
+            return false;
         }
+        return true;
     }
 
 
@@ -102,23 +95,23 @@ public partial class MainWindow : Window
     {
         if (model == null && games.Count > 0)
         {
-            labelGame.Content = games[0].Name;
-            labelLocal.Content = games[0].LocalPath;
-            labelCloud.Content = games[0].CloudPath;
+            textboxLabelGameName.Text = games[0].Name;
+            textboxLabelGameLocalPath.Text = games[0].LocalPath;
+            textboxLabelGameCloudPath.Text = games[0].CloudPath;
             _selectedGame = games[0];
         }
         else if (model == null)
         {
-            labelGame.Content = "-";
-            labelLocal.Content = "-";
-            labelCloud.Content = "-";
+            textboxLabelGameName.Text = "-";
+            textboxLabelGameLocalPath.Text = "-";
+            textboxLabelGameCloudPath.Text = "-";
             _selectedGame = null;
         }
         else
         {
-            labelGame.Content = model.Name;
-            labelLocal.Content = model.LocalPath;
-            labelCloud.Content = model.CloudPath;
+            textboxLabelGameName.Text = model.Name;
+            textboxLabelGameLocalPath.Text = model.LocalPath;
+            textboxLabelGameCloudPath.Text = model.CloudPath;
             _selectedGame = model;
         }
     }
@@ -131,9 +124,10 @@ public partial class MainWindow : Window
     private void buttonUpload_Click(object sender, RoutedEventArgs e)
     {
         if(_selectedGame != null) {
-            DeleteDirectoryContents(_selectedGame.CloudPath);
-            CopyDirectory(_selectedGame.LocalPath, _selectedGame.CloudPath);
-            _consoleManager.Add("uploaded: "+_selectedGame.Name);
+            var deleted = DeleteDirectoryContents(_selectedGame.CloudPath);
+            var copied =  CopyDirectory(_selectedGame.LocalPath, _selectedGame.CloudPath);
+            if(copied && deleted) 
+                _consoleManager.Add("uploaded: "+_selectedGame.Name);
         }
     }
 
@@ -141,9 +135,10 @@ public partial class MainWindow : Window
     {
         if (_selectedGame != null)
         {
-            DeleteDirectoryContents(_selectedGame.LocalPath);
-            CopyDirectory(_selectedGame.CloudPath, _selectedGame.LocalPath);
-            _consoleManager.Add("downloaded: " + _selectedGame.Name);
+           var deleted = DeleteDirectoryContents(_selectedGame.LocalPath);
+            var copied = CopyDirectory(_selectedGame.CloudPath, _selectedGame.LocalPath);
+            if (copied && deleted)
+                _consoleManager.Add("downloaded: " + _selectedGame.Name);
         }
     }
 

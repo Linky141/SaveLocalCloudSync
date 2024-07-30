@@ -5,16 +5,33 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SaveLocalCloudSync.Windows"
         mc:Ignorable="d"
-        Title="NewGameWindow" Height="184" Width="823" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+        Title="NewGameWindow" Height="232" Width="823" ResizeMode="NoResize" WindowStartupLocation="CenterScreen"
+                     xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+     TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+     TextElement.FontWeight="Regular"
+     TextElement.FontSize="13"
+     TextOptions.TextFormattingMode="Ideal"
+     TextOptions.TextRenderingMode="Auto"
+     Background="{DynamicResource MaterialDesignPaper}"
+     FontFamily="{DynamicResource MaterialDesignFont}"
+        xmlns:md="http://materialdesigninxaml.net/winfx/xaml/themes">
     <Grid>
-        <Label Content="Name" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
-        <Label Content="Local data" HorizontalAlignment="Left" Margin="10,41,0,0" VerticalAlignment="Top"/>
-        <Label Content="Cloud data" HorizontalAlignment="Left" Margin="10,72,0,0" VerticalAlignment="Top"/>
+        <Label Content="Name" HorizontalAlignment="Left" Margin="22,15,0,0" VerticalAlignment="Top"/>
+        <Label Content="Local data" HorizontalAlignment="Left" Margin="10,45,0,0" VerticalAlignment="Top"/>
+        <Label Content="Cloud data" HorizontalAlignment="Left" Margin="10,75,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="textboxName" HorizontalAlignment="Left" Margin="82,14,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="708"/>
-        <TextBox x:Name="textboxLocalData" HorizontalAlignment="Left" Margin="82,45,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="708"/>
-        <TextBox x:Name="textboxCloudData" HorizontalAlignment="Left" Margin="82,0,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Width="708"/>
-        <Button x:Name="buttonSave" Content="Save" HorizontalAlignment="Left" Margin="10,103,0,0" VerticalAlignment="Top" Click="buttonSave_Click" Height="55" Width="234"/>
-        <Button x:Name="buttonCancel" Content="Cancel" HorizontalAlignment="Left" Margin="249,103,0,0" VerticalAlignment="Top" Click="buttonCancel_Click" Height="55" Width="234"/>
+        <TextBox x:Name="textboxLocalData" HorizontalAlignment="Left" Margin="82,44,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="708"/>
+        <TextBox x:Name="textboxCloudData" HorizontalAlignment="Left" Margin="82,74,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="708"/>
+        <Button x:Name="buttonSave"   Style="{StaticResource MaterialDesignFlatButton}" Foreground="ForestGreen"  HorizontalAlignment="Left" Margin="12,118,0,0" Click="buttonSave_Click" Width="234" Height="67" VerticalAlignment="Top">
+            <StackPanel Orientation="Horizontal">
+                <md:PackIcon Kind="Approve" Width="16" Height="16" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5,0,5,0"/>
+            </StackPanel>
+        </Button>
+        <Button x:Name="buttonCancel"  Style="{StaticResource MaterialDesignFlatButton}" Foreground="IndianRed"  HorizontalAlignment="Left" Margin="251,118,0,0" Click="buttonCancel_Click" Width="234" Height="67" VerticalAlignment="Top">
+            <StackPanel Orientation="Horizontal">
+                <md:PackIcon Kind="Cancel" Width="16" Height="16" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5,0,5,0"/>
+            </StackPanel>
+        </Button>
 
     </Grid>
 </Window>

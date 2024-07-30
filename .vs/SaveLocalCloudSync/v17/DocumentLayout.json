@@ -7,8 +7,8 @@
       "RelativeMoniker": "D:0:0:{A79B3BA8-26DC-4259-820A-C16A8CD38200}|SaveLocalCloudSync\\SaveLocalCloudSync.csproj|solutionrelative:savelocalcloudsync\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A79B3BA8-26DC-4259-820A-C16A8CD38200}|SaveLocalCloudSync\\SaveLocalCloudSync.csproj|d:\\projects\\desktop\\savelocalcloudsync\\savelocalcloudsync\\windows\\newgamewindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A79B3BA8-26DC-4259-820A-C16A8CD38200}|SaveLocalCloudSync\\SaveLocalCloudSync.csproj|solutionrelative:savelocalcloudsync\\windows\\newgamewindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A79B3BA8-26DC-4259-820A-C16A8CD38200}|SaveLocalCloudSync\\SaveLocalCloudSync.csproj|d:\\projects\\desktop\\savelocalcloudsync\\savelocalcloudsync\\utils\\consolemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A79B3BA8-26DC-4259-820A-C16A8CD38200}|SaveLocalCloudSync\\SaveLocalCloudSync.csproj|solutionrelative:savelocalcloudsync\\utils\\consolemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A79B3BA8-26DC-4259-820A-C16A8CD38200}|SaveLocalCloudSync\\SaveLocalCloudSync.csproj|d:\\projects\\desktop\\savelocalcloudsync\\savelocalcloudsync\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
@@ -21,20 +21,32 @@
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedHeight": 200,
-          "SelectedChildIndex": 2,
+          "DockedHeight": 348,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "NewGameWindow.xaml.cs",
-              "DocumentMoniker": "D:\\Projects\\Desktop\\SaveLocalCloudSync\\SaveLocalCloudSync\\Windows\\NewGameWindow.xaml.cs",
-              "RelativeDocumentMoniker": "SaveLocalCloudSync\\Windows\\NewGameWindow.xaml.cs",
-              "ToolTip": "D:\\Projects\\Desktop\\SaveLocalCloudSync\\SaveLocalCloudSync\\Windows\\NewGameWindow.xaml.cs",
-              "RelativeToolTip": "SaveLocalCloudSync\\Windows\\NewGameWindow.xaml.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAEQAAAAyAAAA",
+              "Title": "ConsoleManager.cs",
+              "DocumentMoniker": "D:\\Projects\\Desktop\\SaveLocalCloudSync\\SaveLocalCloudSync\\Utils\\ConsoleManager.cs",
+              "RelativeDocumentMoniker": "SaveLocalCloudSync\\Utils\\ConsoleManager.cs",
+              "ToolTip": "D:\\Projects\\Desktop\\SaveLocalCloudSync\\SaveLocalCloudSync\\Utils\\ConsoleManager.cs",
+              "RelativeToolTip": "SaveLocalCloudSync\\Utils\\ConsoleManager.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAArAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-29T20:33:38.973Z",
+              "WhenOpened": "2024-07-30T20:53:49.394Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "D:\\Projects\\Desktop\\SaveLocalCloudSync\\SaveLocalCloudSync\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "SaveLocalCloudSync\\MainWindow.xaml.cs",
+              "ToolTip": "D:\\Projects\\Desktop\\SaveLocalCloudSync\\SaveLocalCloudSync\\MainWindow.xaml.cs",
+              "RelativeToolTip": "SaveLocalCloudSync\\MainWindow.xaml.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-30T20:48:31.521Z",
               "EditorCaption": ""
             },
             {
@@ -46,21 +58,7 @@
               "ToolTip": "D:\\Projects\\Desktop\\SaveLocalCloudSync\\SaveLocalCloudSync\\MainWindow.xaml",
               "RelativeToolTip": "SaveLocalCloudSync\\MainWindow.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-07-29T20:18:48.674Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "MainWindow.xaml.cs",
-              "DocumentMoniker": "D:\\Projects\\Desktop\\SaveLocalCloudSync\\SaveLocalCloudSync\\MainWindow.xaml.cs",
-              "RelativeDocumentMoniker": "SaveLocalCloudSync\\MainWindow.xaml.cs",
-              "ToolTip": "D:\\Projects\\Desktop\\SaveLocalCloudSync\\SaveLocalCloudSync\\MainWindow.xaml.cs",
-              "RelativeToolTip": "SaveLocalCloudSync\\MainWindow.xaml.cs",
-              "ViewState": "AQIAABQAAAAAAAAAAAAgwCIAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-29T20:11:05.766Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-29T20:18:48.674Z"
             }
           ]
         }

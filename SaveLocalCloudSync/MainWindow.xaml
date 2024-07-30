@@ -5,26 +5,66 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SaveLocalCloudSync"
         mc:Ignorable="d"
-        Title="" Height="450" Width="800" ResizeMode="NoResize" x:Name="windowMainWindow">
+        Title="" Height="450" Width="800" ResizeMode="NoResize" x:Name="windowMainWindow"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+     TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+     TextElement.FontWeight="Regular"
+     TextElement.FontSize="13"
+     TextOptions.TextFormattingMode="Ideal"
+     TextOptions.TextRenderingMode="Auto"
+     Background="{DynamicResource MaterialDesignPaper}"
+     FontFamily="{DynamicResource MaterialDesignFont}"
+        xmlns:md="http://materialdesigninxaml.net/winfx/xaml/themes"
+        >
     <Grid>
         <ListBox x:Name="listboxGames" Margin="10,10,427,10" SelectionChanged="listboxGames_SelectionChanged">
             <ListBox.ItemContainerStyle>
-                <Style TargetType="ListBoxItem">
+                <Style TargetType="ListBoxItem" BasedOn="{StaticResource MaterialDesignListBoxItem}">
                     <Setter Property="Height" Value="50"/>
                 </Style>
             </ListBox.ItemContainerStyle>
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="{Binding Name}" Margin="10"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
         </ListBox>
-        <Button x:Name="buttonUpload" Content="UPLOAD" HorizontalAlignment="Left" Margin="378,283,0,10" Width="198" Click="buttonUpload_Click"/>
-        <Button x:Name="buttonDownload" Content="DOWNLOAD" Margin="592,283,10,10" Click="buttonDownload_Click"/>
-        <Button x:Name="buttonAddNewGame" Content="Add game" HorizontalAlignment="Left" Margin="378,10,0,0" VerticalAlignment="Top" Height="95" Width="144" Click="buttonAddNewGame_Click"/>
-        <Button x:Name="buttonEditGame" Content="Edit game" HorizontalAlignment="Left" Margin="527,11,0,0" VerticalAlignment="Top" Height="48" Width="83" Click="buttonEditGame_Click"/>
-        <Button x:Name="buttonRemoveGame" Content="Remove game" HorizontalAlignment="Left" Margin="527,59,0,0" VerticalAlignment="Top" Height="46" Width="83" Click="buttonRemoveGame_Click"/>
+        <Button Style="{StaticResource MaterialDesignOutlinedButton}"  x:Name="buttonUpload" HorizontalAlignment="Left" Margin="378,0,0,10" Width="198" Click="buttonUpload_Click" Height="86" VerticalAlignment="Bottom">
+            <StackPanel Orientation="Horizontal">
+                <md:PackIcon Kind="upload" Width="16" Height="16" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5,0,5,0"/>
+                <TextBlock Text="Upload" VerticalAlignment="Center"/>
+            </StackPanel>
+        </Button>
+        <Button  Style="{StaticResource MaterialDesignOutlinedButton}" x:Name="buttonDownload" Margin="592,0,10,10" Click="buttonDownload_Click" Height="86" VerticalAlignment="Bottom">
+            <StackPanel Orientation="Horizontal">
+                <md:PackIcon Kind="Download" Width="16" Height="16" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5,0,5,0"/>
+                <TextBlock Text="Download" VerticalAlignment="Center"/>
+            </StackPanel>
+        </Button>
+        <Button Style="{StaticResource MaterialDesignFlatButton}" x:Name="buttonAddNewGame" HorizontalAlignment="Left" Margin="378,10,0,0" VerticalAlignment="Top" Height="95" Width="115" Click="buttonAddNewGame_Click">
+            <StackPanel Orientation="Horizontal">
+                <md:PackIcon Kind="Add" Width="16" Height="16" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5,0,5,0"/>
+            </StackPanel>
+        </Button>
+        <Button Style="{StaticResource MaterialDesignFlatButton}" x:Name="buttonEditGame" HorizontalAlignment="Left" Margin="498,11,0,0" VerticalAlignment="Top" Height="48" Width="55" Click="buttonEditGame_Click">
+            <StackPanel Orientation="Horizontal">
+                <md:PackIcon Kind="Edit" Width="16" Height="16" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5,0,5,0"/>
+            </StackPanel>
+        </Button>
+        <Button Style="{StaticResource MaterialDesignFlatButton}" Foreground="IndianRed" x:Name="buttonRemoveGame" HorizontalAlignment="Left" Margin="498,59,0,0" VerticalAlignment="Top" Height="46" Width="55" Click="buttonRemoveGame_Click">
+            <StackPanel Orientation="Horizontal">
+                <md:PackIcon Kind="Delete" Width="16" Height="16" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5,0,5,0"/>
+            </StackPanel>
+        </Button>
         <Label Content="Game: " HorizontalAlignment="Left" Margin="378,110,0,0" VerticalAlignment="Top"/>
         <Label Content="Local: " HorizontalAlignment="Left" Margin="378,141,0,0" VerticalAlignment="Top"/>
         <Label Content="Cloud: " HorizontalAlignment="Left" Margin="378,172,0,0" VerticalAlignment="Top"/>
-        <ListBox x:Name="listboxConsole" Margin="615,9,10,329"/>
-        <Label x:Name="labelGame" Content="-" HorizontalAlignment="Left" Margin="430,110,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="labelLocal" Content="-" HorizontalAlignment="Left" Margin="426,141,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="labelCloud" Content="-" HorizontalAlignment="Left" Margin="426,172,0,0" VerticalAlignment="Top"/>
+        <ListBox x:Name="listboxConsole" Margin="558,9,10,329"  ItemContainerStyle="{StaticResource MaterialDesignListBoxItem}"/>
+
+        <TextBox x:Name="textboxLabelGameName" Margin="423,109,10,0" TextWrapping="NoWrap" Text="-" IsReadOnly="True" VerticalAlignment="Top"/>
+        <TextBox x:Name="textboxLabelGameLocalPath" Margin="423,140,10,0" TextWrapping="NoWrap" Text="-"  IsReadOnly="True" VerticalAlignment="Top"/>
+        <TextBox x:Name="textboxLabelGameCloudPath" Margin="423,171,10,0" TextWrapping="NoWrap" Text="-"  IsReadOnly="True" VerticalAlignment="Top"/>
     </Grid>
 </Window>
