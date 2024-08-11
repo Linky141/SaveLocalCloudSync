@@ -5,7 +5,7 @@ namespace SaveLocalCloudSync.Utils;
 public class ConsoleManager
 {
     private readonly ListBox console;
-    private readonly int consoleBuffer = 20;
+    private readonly int consoleBuffer = 5;
 
     public ConsoleManager(ListBox console)
     {

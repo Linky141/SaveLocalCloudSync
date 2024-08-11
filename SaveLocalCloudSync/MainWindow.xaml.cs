@@ -17,13 +17,13 @@ public partial class MainWindow : Window
     ObservableCollection<GameModel> games;
     private GameModel _selectedGame;
     ConsoleManager _consoleManager;
-    private string _version = "Beta 2.0";
+    private string _version = "Beta 2.1";
 
     public MainWindow()
     {
         InitializeComponent();
         games = Serializer.DeserializeFromFile<ObservableCollection<GameModel>>();
-        if(games == null) 
+        if (games == null)
             games = new();
         listboxGames.ItemsSource = games;
         _selectedGame = new();
@@ -34,33 +34,6 @@ public partial class MainWindow : Window
         progressbarUpload.Minimum = 0;
         progressbarUpload.Maximum = 100;
     }
-
-    /*bool DeleteDirectoryContents(string directoryPath)
-    {
-        try
-        {
-            if (Directory.Exists(directoryPath))
-            {
-                DirectoryInfo di = new DirectoryInfo(directoryPath);
-
-                foreach (FileInfo file in di.GetFiles())
-                {
-                    file.Delete();
-                }
-
-                foreach (DirectoryInfo subDir in di.GetDirectories())
-                {
-                    subDir.Delete(true);
-                }
-            }
-        }
-        catch (Exception ex)
-        {
-            _consoleManager.Add(ex.Message);
-            return false;
-        }
-        return true;
-    }*/
 
     private bool DeleteDirectoryContents(string directoryPath, Mode mode)
     {
@@ -98,11 +71,11 @@ public partial class MainWindow : Window
         return true;
     }
 
-    private bool CopyDirectory(string sourceDir, string destDir)
+    private bool CopyDirectory(string sourceDir, string destDir, bool firstIteration = true)
     {
         try
         {
-        
+
 
             if (!Directory.Exists(sourceDir))
             {
@@ -123,12 +96,14 @@ public partial class MainWindow : Window
                 copiedCount++;
 
                 double progress = (double)copiedCount / totalCount * 100;
-
-                Application.Current.Dispatcher.Invoke(() =>
+                if (firstIteration)
+                {
+                    Application.Current.Dispatcher.Invoke(() =>
                 {
                     progressbarDownload.Value = progress;
                     progressbarUpload.Value = progress;
                 });
+                }
             }
 
             string[] subDirectories = Directory.GetDirectories(sourceDir);
@@ -136,22 +111,28 @@ public partial class MainWindow : Window
             {
                 string subDirName = Path.GetFileName(subDirPath);
                 string destSubDirPath = Path.Combine(destDir, subDirName);
-                CopyDirectory(subDirPath, destSubDirPath);
+                CopyDirectory(subDirPath, destSubDirPath, false);
                 copiedCount++;
 
                 double progress = (double)copiedCount / totalCount * 100;
 
-                Application.Current.Dispatcher.Invoke(() =>
+                if (firstIteration)
                 {
-                    progressbarDownload.Value = progress;
-                    progressbarUpload.Value = progress;
-                });
+                    Application.Current.Dispatcher.Invoke(() =>
+                    {
+                        progressbarDownload.Value = progress;
+                        progressbarUpload.Value = progress;
+                    });
+                }
             }
 
-            Application.Current.Dispatcher.Invoke(() =>
+            if (firstIteration)
             {
-                ManageDownloadUploadButtons(Mode.Idle);
-            });
+                Application.Current.Dispatcher.Invoke(() =>
+                {
+                    ManageDownloadUploadButtons(Mode.Idle);
+                });
+            }
         }
         catch (Exception ex)
         {
@@ -197,11 +178,12 @@ public partial class MainWindow : Window
 
     private async void buttonUpload_Click(object sender, RoutedEventArgs e)
     {
-        if(_selectedGame != null) {
+        if (_selectedGame != null)
+        {
             var deleted = await Task.Run(() => DeleteDirectoryContents(_selectedGame.CloudPath, Mode.Upload));
             var copied = await Task.Run(() => CopyDirectory(_selectedGame.LocalPath, _selectedGame.CloudPath));
-            if (copied && deleted) 
-                _consoleManager.Add("uploaded: "+_selectedGame.Name);
+            if (copied && deleted)
+                _consoleManager.Add("uploaded: " + _selectedGame.Name);
         }
     }
 
@@ -249,9 +231,9 @@ public partial class MainWindow : Window
     {
         if (_selectedGame != null)
         {
-                games.Remove(_selectedGame);
+            games.Remove(_selectedGame);
 
-                SaveGamesData();
+            SaveGamesData();
         }
     }
 
@@ -262,25 +244,25 @@ public partial class MainWindow : Window
 
     void ManageDownloadUploadButtons(Mode mode)
     {
-        if(mode == Mode.Download)
+        if (mode == Mode.Download)
         {
             LockUnlockButtons(false);
-         /*   buttonDownload.Visibility = Visibility.Hidden;*/
+            /*   buttonDownload.Visibility = Visibility.Hidden;*/
             progressbarDownload.Visibility = Visibility.Visible;
             progressbarDownload.Value = 0;
         }
-        else if(mode == Mode.Upload)
+        else if (mode == Mode.Upload)
         {
             LockUnlockButtons(false);
-           /* buttonUpload.Visibility = Visibility.Hidden;*/
+            /* buttonUpload.Visibility = Visibility.Hidden;*/
             progressbarUpload.Visibility = Visibility.Visible;
             progressbarUpload.Value = 0;
         }
-        else if(mode == Mode.Idle)
+        else if (mode == Mode.Idle)
         {
             LockUnlockButtons(true);
-         /*   buttonDownload.Visibility = Visibility.Visible;
-            buttonUpload.Visibility = Visibility.Visible;*/
+            /*   buttonDownload.Visibility = Visibility.Visible;
+               buttonUpload.Visibility = Visibility.Visible;*/
             progressbarDownload.Visibility = Visibility.Hidden;
             progressbarUpload.Visibility = Visibility.Hidden;
         }
@@ -288,7 +270,7 @@ public partial class MainWindow : Window
 
     void LockUnlockButtons(bool state)
     {
-            buttonUpload.IsEnabled = state;
+        buttonUpload.IsEnabled = state;
         buttonDownload.IsEnabled = state;
         buttonAddNewGame.IsEnabled = state;
         buttonRemoveGame.IsEnabled = state;

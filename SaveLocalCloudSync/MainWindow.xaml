@@ -61,8 +61,13 @@
         <Label Content="Game: " HorizontalAlignment="Left" Margin="561,19,0,0" VerticalAlignment="Top" Width="46"/>
         <Label Content="Local: " HorizontalAlignment="Left" Margin="563,50,0,0" VerticalAlignment="Top" Width="43"/>
         <Label Content="Cloud: " HorizontalAlignment="Left" Margin="561,81,0,0" VerticalAlignment="Top" Width="46"/>
-        <ListBox x:Name="listboxConsole" Margin="378,110,10,101"  ItemContainerStyle="{StaticResource MaterialDesignListBoxItem}"/>
-
+        <ListBox x:Name="listboxConsole" Margin="378,110,10,101" ItemContainerStyle="{StaticResource MaterialDesignListBoxItem}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding}" TextWrapping="Wrap"/>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
         <TextBox x:Name="textboxLabelGameName" Margin="607,18,10,0" TextWrapping="NoWrap" Text="-" IsReadOnly="True" VerticalAlignment="Top"/>
         <TextBox x:Name="textboxLabelGameLocalPath" Margin="607,49,10,0" TextWrapping="NoWrap" Text="-"  IsReadOnly="True" VerticalAlignment="Top"/>
         <TextBox x:Name="textboxLabelGameCloudPath" Margin="607,80,10,0" TextWrapping="NoWrap" Text="-"  IsReadOnly="True" VerticalAlignment="Top"/>
